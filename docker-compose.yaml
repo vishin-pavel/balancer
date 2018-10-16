@@ -1,0 +1,15 @@
+version: "3.5"
+services:
+  balancer:
+    image: nginx
+    container_name: balancer
+    volumes:
+      - "./nginx.conf:/etc/nginx/conf.d/default.conf"
+      - "./services:/etc/nginx/conf.d/services"
+    networks:
+      - "mo-balancer"
+    ports:
+      - "80:80"
+networks:
+  mo-balancer:
+    name: mo-balancer
