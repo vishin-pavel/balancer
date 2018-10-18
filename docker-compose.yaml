@@ -10,6 +10,7 @@ services:
       - "mo-balancer"
     ports:
       - "80:80"
+      - "8888:8888"
 networks:
   mo-balancer:
     name: mo-balancer
